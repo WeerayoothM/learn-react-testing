@@ -1,0 +1,12 @@
+.avatars {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  margin-left: -12px;
+}
+
+.avatar:last-child {
+  margin-left: 0px;
+}

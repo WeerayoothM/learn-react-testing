@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Avatar } from "./components";
+import AvatarGroup from "./components/AvatarGroup";
+import { imageUrl } from "./util/imageUrl";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AvatarGroup max={3}>
+        {imageUrl.map((url, index) => {
+          return (
+            <Avatar
+              arial-label="meow"
+              key={index}
+              src={url}
+              size="sm"
+              style={{
+                border: "1.5px solid gray",
+                backgroundColor: "white",
+              }}
+            />
+          );
+        })}
+      </AvatarGroup>
     </div>
   );
 }
